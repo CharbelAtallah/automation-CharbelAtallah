@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-11-03T15:22:11.718Z",
+    "end": "2021-11-03T15:22:18.108Z",
+    "duration": 6390,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ca3b0c19-2d1a-4614-9779-f28d76a791fb",
+      "title": "",
+      "fullFile": "cypress/integration/Test-suite.spec.js",
+      "file": "cypress/integration/Test-suite.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8bd807b3-8645-4664-b12c-22195ef6451b",
+          "title": "Test suite - 1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test case 1 - Check Rooms",
+              "fullTitle": "Test suite - 1 Test case 1 - Check Rooms",
+              "timedOut": null,
+              "duration": 5073,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "roomsPageFuncs.clickOnRoomsPages(cy); //Click on Rooms\n// input contains room somethinv // roomsPageFuncs.checkTitleOfRoomsPage(cy)\n// dashboardPageFuncs.checkTitleOfdashboardPage(cy) //Tabortfrån listan i kod\ndashboardPageFuncs.clickOnDashboardPages(cy); //Back Btn\nclientPageFuncs.clickOnClientsPages(cy); //Click on Clients\n//input contains client something\ndashboardPageFuncs.clickOnDashboardPages(cy); //Back Btn\nbillPageFuncs.clickOnBillsPages(cy); //Click on Bills\n//input contains bill something\ndashboardPageFuncs.clickOnDashboardPages(cy); //Back Btn\nreservationsPageFuncs.clickOnReservationsPages(cy); //Click Reservations\ndashboardPageFuncs.clickOnDashboardPages(cy); //Back Btn",
+              "err": {},
+              "uuid": "30655772-a309-409b-9325-b7f09394d0b5",
+              "parentUUID": "8bd807b3-8645-4664-b12c-22195ef6451b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "30655772-a309-409b-9325-b7f09394d0b5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5073,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}

@@ -14,15 +14,17 @@ const selectRoomSaveBtn ='.blue' //Click on save button in room
 const selectRoomMenu =':nth-child(3) > .action > img' //clicks on the ... on the side
 const selectRoomDelete='.menu > :nth-child(2)' //Deleting the room
 
-//Functions
+//Function to Click on view room
 function clickOnRoomsPages(cy){
     cy.get(viewRooms).click()
 }
 
+//Function to create rooms
 function clickOnCreateRooms(cy) {
     cy.get(createRooms).click()
 }
 
+//Function to put in text in fields
 function inputRoomsFields(cy) {
     cy.get(selectRoomCategory).select('Single').click
     cy.get(selectRoomNumber).type('55')
@@ -33,10 +35,10 @@ function inputRoomsFields(cy) {
     cy.get(selectRoomSaveBtn).click()
 }
 
+//Function to select menu and delete
 function deleteRoomMenu(cy) {
     cy.get(selectRoomMenu).click()
     cy.get(selectRoomDelete).click()
-
 }
 
 //function checkTitleOfRoomsPage(cy){

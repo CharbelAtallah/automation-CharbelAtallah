@@ -10,15 +10,20 @@ const selectClientEmail=':nth-child(2) > input' //.type('chappa_atallah@hotmail.
 const selectClientTele=':nth-child(3) > input' //.type('0737183032') //Input phone
 const selectClientSaveBtn ='.blue' //Click on save button in Client
 
-//Functions
+const selectClientMenu =':nth-child(3) > .action > img' //clicks on the ... on the side
+const selectClientDelete='.menu > :nth-child(2)' //Deleting the room
+
+//Function to click on view client
 function clickOnClientsPages(cy){
     cy.get(viewClient).click() //Click on view Client
 }
 
+//Function to create client
 function clickOnCreateClients(cy) {
     cy.get(createClients).click() //Click on create a Client
 }
 
+//Function to put in text in fields
 function inputClientsFields(cy) {
     cy.get(selectClientName).type('Charbel Atallah') //Input name
     cy.get(selectClientEmail).type('chappa_atallah@hotmail.com') //Input email
@@ -26,6 +31,12 @@ function inputClientsFields(cy) {
     cy.get(selectClientSaveBtn).click() //Click on save btn
 }
 
+//Function to select menu and delete
+function deleteClientMenu(cy) {
+    cy.get(selectClientMenu).click()
+    cy.get(selectClientDelete).click()
+
+}
 //function checkTitleOfRoomsPage(cy){
   //  cy.get('Floor').contains().should('eq', titleOfRooms)
 
@@ -37,9 +48,9 @@ module.exports = {
     //checkTitleOfRoomsPage,
     clickOnClientsPages,
     clickOnCreateClients,
-    inputClientsFields
+    inputClientsFields,
+    deleteClientMenu
 }
 
 
 //fixa contains
-//importera allt i test suite
