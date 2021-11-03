@@ -6,6 +6,7 @@ import * as roomsPageFuncs from '../pages/roomsPage'
 import * as clientPageFuncs from '../pages/clientPage'
 import * as billPageFuncs from '../pages/billPage'
 import * as reservationsPageFuncs from '../pages/reservationsPage'
+import * as loginPageFuncs from '../pages/loggPage'
 
 8. //Test suite
 describe('Test suite - 1', function(){
@@ -16,26 +17,20 @@ describe('Test suite - 1', function(){
   })
 
     beforeEach(() => {
-        cy.get(':nth-child(1) > input').type('tester01')
-        cy.get(':nth-child(2) > input').type('GteteqbQQgSr88SwNExUQv2ydb7xuf8c')
-        cy.get('.btn').click() //Click log in
+        loginPageFuncs.performLogin(cy)
     })
-/*
+
     afterEach(() => {
-        cy.get('.user > .btn').click() //log out
+        loginPageFuncs.perfomLogout(cy)
       })
-*/
+
 
         it('Test case 1 - Check Rooms', function () {   
             roomsPageFuncs.clickOnRoomsPages(cy) //Click on Rooms
-            // input contains room somethinv // roomsPageFuncs.checkTitleOfRoomsPage(cy)
-            // dashboardPageFuncs.checkTitleOfdashboardPage(cy) //Tabortfrån listan i kod
-             dashboardPageFuncs.clickOnDashboardPages(cy) //Back Btn
+            dashboardPageFuncs.clickOnDashboardPages(cy) //Back Btn
             clientPageFuncs.clickOnClientsPages(cy) //Click on Clients
-            //input contains client something
             dashboardPageFuncs.clickOnDashboardPages(cy) //Back Btn
             billPageFuncs.clickOnBillsPages(cy) //Click on Bills
-            //input contains bill something
             dashboardPageFuncs.clickOnDashboardPages(cy) //Back Btn
             reservationsPageFuncs.clickOnReservationsPages(cy) //Click Reservations
             dashboardPageFuncs.clickOnDashboardPages(cy) //Back Btn
@@ -59,18 +54,13 @@ describe('Test suite - 1', function(){
         cy.get(':nth-child(3) > .btn').click() //Click back
     })
     */
-   /*
+   
         it('Test Case 2 - Create a Room', function () {
             cy.wait(2000)
-            //contains something here rooms page
             roomsPageFuncs.clickOnRoomsPages(cy) //Click on Rooms
-            //Contains create room
             roomsPageFuncs.clickOnCreateRooms(cy)
-            //Contains something here in Create room page
             roomsPageFuncs.inputRoomsFields(cy)
-            //Contains something here in Rooms page
-        })
-        */
+        })     
 /*
     it('Test case 2 - create a room' ,function(){
         cy.wait(2000) //Delaying with 3 ms, for the site to upload
@@ -87,16 +77,11 @@ describe('Test suite - 1', function(){
         cy.contains('Create Room')
     })
 */
-/*
         it('Test Case 3 - Delete a Room', function () {
             cy.wait(2000)
-            //contains something here from the dashboard
             roomsPageFuncs.clickOnRoomsPages(cy) //Click on Rooms
-            //Contains something from room
-            roomsPageFuncs.deleteRoomMenu(cy)
-            
+            roomsPageFuncs.deleteRoomMenu(cy) //Delete Room
         })
-*/
 /*
     it('Test case 3 - Delete a room' ,function(){
         cy.wait(2000) 
@@ -107,17 +92,15 @@ describe('Test suite - 1', function(){
 
     })
 */
-/*
+
         it('Test Case 4 - Create a Client', function () {
             cy.wait(2000)
             clientPageFuncs.clickOnClientsPages(cy) //Click on view Clients
-            //Contains something in clients
             clientPageFuncs.clickOnCreateClients(cy) //Click on create a new client
-            //Contains something for create new clint page
             clientPageFuncs.inputClientsFields(cy) //Input type in textfields & Save
             dashboardPageFuncs.clickOnDashboardPages(cy) //Back Btn
         })
-*/
+
 /*
     it('Test case 4 - Create a client' ,function(){
         cy.wait(2000)
@@ -134,15 +117,14 @@ describe('Test suite - 1', function(){
     })
 */
 
-/*
+
         it('Test Case 5 - Delete a Client', function () {
             cy.wait(2000)
-            //Check contains Client in dashboard
+            dashboardPageFuncs.checkTitleOfdashboardPage(cy)
             clientPageFuncs.clickOnClientsPages(cy) //Click on view Clients
-            //Check contains in client page
-            clientPageFuncs.deleteClientMenu(cy)
+            clientPageFuncs.deleteClientMenu(cy) //Delete Client
         })
-*/
+
 /*
     it('Test case 5 - Delete Client' ,function(){
         cy.wait(2000)
@@ -153,17 +135,14 @@ describe('Test suite - 1', function(){
         cy.get('.menu > :nth-child(2)').click() //Delete the Client that was created in TC5
     })
 */
-/*
+
         it('Test Case 6 - Create a Bill', function () {
             cy.wait(2000)
-            //Contains bill on dashboard
             billPageFuncs.clickOnBillsPages(cy) //Click on Bills
-            //Contains something in bills page
             billPageFuncs.clickOnCreateBill(cy)
-            //Contains something in create bill page
             billPageFuncs.inputBillsFields(cy) //Input textfields
         })
-*/
+
 /*
     it('Test case 6 - Create a bill' ,function(){
         cy.wait(2000)
@@ -177,16 +156,14 @@ describe('Test suite - 1', function(){
         cy.get('.blue').click() //Saves
     })
 */
-/*
+
         it('Test Case 7 - Edit and uncheck and check the paid button on a bill', function () {
             cy.wait(2000)
-            //Contains bill on dashboard
             billPageFuncs.clickOnBillsPages(cy) //Click on Bills
-            //Contains something in bills page
             billPageFuncs.menuBillEdit(cy)
             billPageFuncs.checkUncheckBillBox(cy)
         })
-*/
+
 /*
 
     it('Test case 7 - Edit and uncheck and check the paid button on a bill' ,function(){
@@ -204,17 +181,15 @@ describe('Test suite - 1', function(){
         cy.get('.blue').click() //Saves
     })
 */
-/*
+
         it('Test Case 8 - Delete a Bill', function () {
             cy.wait(2000)
-            //Contains bill on dashboard
             billPageFuncs.clickOnBillsPages(cy) //Click on Bills
             billPageFuncs.menuBillDelete(cy) //Delete
             dashboardPageFuncs.clickOnDashboardPages(cy) //Back Btn
-            //Contains something in dashboard
 
         })
-*/
+
 /*
     it('Test case 8 - Delete a bill' ,function(){
         cy.wait(2000)
@@ -226,18 +201,15 @@ describe('Test suite - 1', function(){
         cy.contains('Tester Hotel Overview')
     })
 */
-/*
+
         it('Test Case 9 - Create and Delete reservation', function () {
             cy.wait(2000)
-            //Contains reservations on dashboard
             reservationsPageFuncs.clickOnReservationsPages(cy)
             reservationsPageFuncs.clickOnCreateReservations(cy)
-            //Contains something in create reservation page
             reservationsPageFuncs.inputReservationsFields(cy)
-            //Contains reservation on the reservation page
             reservationsPageFuncs.menuReservationDelete(cy)
         })
- */
+ 
 /*
     it('Test case 9 - Create a reservation & delete reservation' , function(){
         cy.contains('Reservations') //Check ur on the right page
